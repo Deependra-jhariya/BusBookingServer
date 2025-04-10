@@ -1,0 +1,29 @@
+{
+  "name": "busbookingserver",
+  "version": "1.0.0",
+  "description": "This is BusBookingServer project for backend using node and mongo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deependra-jhariya/BusBookingServer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Deependra-jhariya/BusBookingServer/issues"
+  },
+  "homepage": "https://github.com/Deependra-jhariya/BusBookingServer#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.13.2",
+    "nodemon": "^3.1.9"
+  }
+}
