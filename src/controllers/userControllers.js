@@ -61,4 +61,60 @@ const login = async (req, res) => {
   }
 };
 
-module.exports = { signUp, login };
+const profile = async (req, res) => {
+  try {
+    const userId = req?.params?.id;
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+    res.status(200).json({
+      message: "User fetch successfully.",
+      user,
+      success: true,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Internal server error.",
+      error,
+    });
+  }
+};
+
+const updateProfile = async (req, res) => {
+  const { name, email, password } = req.body;
+  try {
+    const userId = req?.params?.id;
+    const updateUser = {
+      name,
+      email,
+      password,
+    };
+    const user = await User.findByIdAndUpdate(userId, updateUser, {
+      new: true,
+    });
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+    res.status(200).json({
+      message: "User updated successfully.",
+      user,
+      success: true,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Internal server error.",
+      error,
+    });
+  }
+};
+
+module.exports = { signUp, login, profile,updateProfile };
