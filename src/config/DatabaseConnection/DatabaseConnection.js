@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
-dotenv.config()
+dotenv.config();
 const connectDb = async () => {
   try {
     console.log(process.env.MONGO_URL);
@@ -9,7 +9,7 @@ const connectDb = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log("Database connected.")
+    console.log("Database connected.");
   } catch (error) {
     console.log("Database not connected.");
   }
