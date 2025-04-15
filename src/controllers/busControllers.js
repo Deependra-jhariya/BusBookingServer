@@ -1,4 +1,3 @@
-const bus = require("../models/busModel");
 const Bus = require("../models/busModel");
 
 const addBuses = async (req, res) => {
